@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐竞体育 · 再一次回到这里</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: #2c2f33;
+            background-color: #f5f6f8;
+        }
+
+        a {
+            color: #c44536;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #a1301d;
+            text-decoration: underline;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #1a1d23 0%, #2b2f3a 100%);
+            color: #e9ecef;
+            padding: 5rem 1.5rem 4rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle at 20% 50%, rgba(196, 69, 54, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #b0b6c2;
+            font-weight: 300;
+            position: relative;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            margin-top: 2rem;
+            background: rgba(255,255,255,0.06);
+            padding: 0.4rem 1.6rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(1px);
+        }
+
+        /* 浅色正文区 */
+        .container {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        .intro-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            margin-top: -2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .intro-card p {
+            margin-bottom: 1.2rem;
+            font-size: 1.08rem;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            margin: 3rem 0 1.5rem 0;
+            color: #1d2026;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: #c44536;
+            margin-top: 6px;
+            border-radius: 2px;
+        }
+
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin: 1.8rem 0 2.5rem;
+        }
+
+        .scene-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem 1.5rem 1.8rem;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+            transition: transform 0.15s ease, box-shadow 0.2s ease;
+            border: 1px solid #f0f1f3;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+        }
+
+        .scene-card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            color: #252a32;
+        }
+
+        .scene-card h3 span {
+            display: inline-block;
+            background: #f0ebe9;
+            color: #c44536;
+            font-size: 0.8rem;
+            padding: 0.1rem 0.6rem;
+            border-radius: 40px;
+            margin-left: 0.4rem;
+            font-weight: 400;
+        }
+
+        .scene-card p {
+            color: #4a4f58;
+            font-size: 0.98rem;
+        }
+
+        .faq-summary {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem 2rem 1.8rem;
+            margin: 2rem 0 1rem;
+            border-left: 4px solid #c44536;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .faq-summary dt {
+            font-weight: 500;
+            font-size: 1.05rem;
+            margin: 0.8rem 0 0.3rem 0;
+            color: #1f232b;
+        }
+
+        .faq-summary dt:first-of-type {
+            margin-top: 0.2rem;
+        }
+
+        .faq-summary dd {
+            margin-left: 0;
+            color: #545a64;
+            padding-bottom: 0.7rem;
+            border-bottom: 1px solid #f0f2f5;
+            font-size: 0.98rem;
+        }
+
+        .faq-summary dd:last-of-type {
+            border-bottom: none;
+        }
+
+        .note-line {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.2rem 0 0.2rem;
+            border-top: 1px solid #e2e4e8;
+            font-size: 0.95rem;
+            color: #646a75;
+        }
+
+        .note-line a {
+            font-weight: 500;
+        }
+
+        /* 响应式 */
+        @media (max-width: 780px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .scene-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.3rem;
+            }
+
+            .container {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .intro-card {
+                padding: 2rem 1.5rem;
+                margin-top: -1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .scene-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .hero {
+                padding: 3.5rem 1rem 2.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .faq-summary {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>乐竞体育</h1>
+        <p>再次打开这个页面，像是回到一个熟悉的节点——<br>收藏夹里一直留着的位置，偶尔点进来看看。</p>
+        <span class="tagline">· 持续关注 · 安静陪伴 ·</span>
+    </header>
+
+    <main class="container">
+        <div class="intro-card">
+            <p>
+                有些人习惯把常去的地方放在浏览器的书签栏里，<a href="https://webs-lejingsports.com">乐竞体育</a>就是其中之一。<br>
+                不一定每天登录，但每隔一段时间，总会回来看看。页面加载的一瞬间，熟悉的布局和节奏让人觉得舒服——不需要重新适应，也不需要犹豫从哪里开始。
+            </p>
+            <p>
+                从体育赛事到日常资讯，从赛前分析到赛后回顾，这里的信息流有一种稳定感。没有夸张的弹窗，也没有反复催促的提示。它更像一个安静的角落，你来了，它就在那里。
+            </p>
+            <p>
+                收藏这个站点，不是因为某个特定的功能，而是因为长期使用下来，习惯了它的节奏。偶尔想看看近况、翻翻过去的内容，或者只是确认一下自己关注的方向有没有变化——打开收藏夹，点开它。
+            </p>
+        </div>
+
+        <h2 class="section-title">三种常见场景</h2>
+        <div class="scene-grid">
+            <div class="scene-card">
+                <h3>赛后回顾 <span>日常</span></h3>
+                <p>
+                    比赛结束后，习惯性打开页面翻看各方观点和数据汇总。没有冗长的加载，信息陈列直接，几分钟就能完成浏览。
+                </p>
+            </div>
+            <div class="scene-card">
+                <h3>资讯浏览 <span>碎片</span></h3>
+                <p>
+                    通勤或午休时，快速扫一眼首页内容。标题清晰，分类明确，不用费力找想看的东西。
+                </p>
+            </div>
+            <div class="scene-card">
+                <h3>定期回访 <span>习惯</span></h3>
+                <p>
+                    每隔一两周点进来，看看有没有新的专题或栏目更新。也常顺手把一些有意思的页面重新打开一遍。
+                </p>
+            </div>
+        </div>
+
+        <h2 class="section-title">一些常见说明</h2>
+        <dl class="faq-summary">
+            <dt>关于再次访问</dt>
+            <dd>如果你之前来过这里，再次打开时内容会基于你的关注方向有所侧重，但首页始终保持着清晰的入口结构，不会因为长期未访问而变得陌生。</dd>
+            <dt>关于收藏与跟进</dt>
+            <dd>把 <a href="https://webs-lejingsports.com">乐竞体育</a> 加入书签是一个很自然的动作。它的地址稳定，没有频繁的跳转或改动，适合长期保留。</dd>
+            <dt>关于内容更新节奏</dt>
+            <dd>这里的更新不算密集，但每一条都有一定的背景或分析。不会出现刷屏式的推送，更适合那些希望安静浏览、按自己节奏跟进的人。</dd>
+            <dt>关于页面本身</dt>
+            <dd>没有强制注册或关注才能阅读全文。大部分信息可以直接浏览，只有少数深度内容才需要额外操作，整体门槛比较低。</dd>
+        </dl>
+
+        <div class="note-line">
+            如果你也习惯把常看的地方留在书签栏，这里是一个不错的选择。<br>
+            不管第几次打开，<a href="https://webs-lejingsports.com">乐竞体育</a> 都保持它一贯的节奏。
+        </div>
+    </main>
+</body>
+</html>
