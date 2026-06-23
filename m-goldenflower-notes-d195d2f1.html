@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>炸金花 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f2f4f6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 2rem 1.2rem;
+        }
+        .page {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* hero 卡片 */
+        .hero-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 3rem 2rem;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid #e9edf2;
+            text-align: center;
+        }
+        .hero-card h1 {
+            font-weight: 600;
+            font-size: 2.2rem;
+            letter-spacing: 0.02em;
+            color: #0b1e2f;
+            margin-bottom: 0.6rem;
+        }
+        .hero-card .sub {
+            font-size: 1rem;
+            color: #5b6f82;
+            max-width: 580px;
+            margin: 0 auto 0.5rem auto;
+            background: #f6f9fc;
+            padding: 0.5rem 1.2rem;
+            border-radius: 60px;
+            display: inline-block;
+            border: 1px solid #e3eaf1;
+        }
+        .hero-card p {
+            max-width: 650px;
+            margin: 1rem auto 0;
+            color: #2d4055;
+            font-size: 0.98rem;
+        }
+
+        /* 通用卡片网格 */
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+            margin-bottom: 2.2rem;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.8rem 1.6rem;
+            flex: 1 1 260px;
+            border: 1px solid #e7ebf0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s ease;
+        }
+        .card:hover {
+            box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.7rem;
+            color: #0e2236;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .card p, .card ul {
+            font-size: 0.94rem;
+            color: #31475e;
+        }
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .card li {
+            margin-bottom: 0.4rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+        .card li::before {
+            content: "·";
+            position: absolute;
+            left: 0.1rem;
+            color: #8a9baa;
+            font-weight: 700;
+        }
+
+        /* 提示卡片 (宽) */
+        .tip-card {
+            background: #ffffff;
+            border-radius: 26px;
+            padding: 1.8rem 2rem;
+            border: 1px solid #e6ecf3;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            margin-bottom: 2.2rem;
+        }
+        .tip-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: #0d253b;
+        }
+        .tip-card p {
+            font-size: 0.95rem;
+            color: #2d4055;
+        }
+        .tip-card a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1f4b7a;
+            border-bottom: 1px solid #bccddb;
+            transition: border-color 0.15s;
+        }
+        .tip-card a:hover {
+            border-bottom-color: #1f4b7a;
+        }
+
+        /* 引用段落 / 说明 */
+        .footnote {
+            background: #ffffff;
+            border-radius: 22px;
+            padding: 1.6rem 2rem;
+            border: 1px solid #e2e8ef;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+            margin-bottom: 1.6rem;
+            font-size: 0.9rem;
+            color: #445c73;
+        }
+        .footnote strong {
+            color: #18334d;
+        }
+
+        /* 响应式 */
+        @media (max-width: 680px) {
+            body { padding: 1.2rem 1rem; }
+            .hero-card { padding: 2rem 1.2rem; }
+            .hero-card h1 { font-size: 1.8rem; }
+            .card { flex: 1 1 100%; }
+            .tip-card { padding: 1.4rem 1.2rem; }
+            .footnote { padding: 1.2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- hero 区域 -->
+        <div class="hero-card">
+            <h1>炸金花</h1>
+            <div class="sub">牌型 · 策略 · 休闲对局</div>
+            <p>一个专注于经典扑克玩法「炸金花」的站点，提供规则讲解、牌型比对以及不同场次的思路参考。无论你是初次接触还是想回顾细节，都能在这里找到清晰的信息。</p>
+        </div>
+
+        <!-- 用途卡片两列 -->
+        <div class="card-grid">
+            <div class="card">
+                <h3>🃏 牌型速查</h3>
+                <ul>
+                    <li>豹子、同花顺、金花、顺子……</li>
+                    <li>牌力高低一目了然</li>
+                    <li>特殊牌型说明与概率简述</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>📖 玩法与规则</h3>
+                <ul>
+                    <li>基本流程与下注方式</li>
+                    <li>常见变体规则对比</li>
+                    <li>术语解释（闷、比牌、弃牌等）</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>🧠 策略参考</h3>
+                <ul>
+                    <li>位置与心理博弈思路</li>
+                    <li>翻牌前与翻牌后的基础逻辑</li>
+                    <li>针对不同人数的调整</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>🎯 休闲场景</h3>
+                <ul>
+                    <li>朋友小聚时的规则共识</li>
+                    <li>线上快速对局指南</li>
+                    <li>新手常见误区提示</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 适合人群 + 链接段落 (自然嵌入) -->
+        <div class="tip-card">
+            <h3>适合哪些人</h3>
+            <p>
+                如果你是刚接触扑克游戏的新手，或者已经玩过一段时间但想系统了解牌型强弱与概率，<a href="https://m--goldenflower.com">炸金花</a>这个站点能帮你节省翻找资料的时间。
+                另外，经常与朋友线下玩几局，或者对策略层面感兴趣的老玩家，也能在牌型比对和规则说明部分找到有用的内容。
+                站点内容围绕中文玩家设计，没有不必要的复杂术语，方便快速阅读。
+            </p>
+        </div>
+
+        <!-- 提示卡片 + 自然链接 -->
+        <div class="tip-card">
+            <h3>一点小提示</h3>
+            <p>
+                游戏本身带有运气成分，但了解基础概率和常见打法能让体验更有趣。这个站点并非教学平台，而是作为资料性的参考。
+                如果你想直接浏览牌型表和规则说明，随时可以打开 <a href="https://m--goldenflower.com">炸金花</a> 页面。
+                另外记得，合理控制节奏、享受牌桌交流才是长久乐趣。
+            </p>
+        </div>
+
+        <!-- FAQ 摘要 (精简) -->
+        <div class="footnote">
+            <strong>常见问题摘要</strong><br>
+            · 炸金花和德州扑克有什么不同？——牌型数量、下注方式及比牌规则均有差异，站点中有单独对比。<br>
+            · 牌型大小顺序是怎样的？——豹子 &gt; 同花顺 &gt; 金花 &gt; 顺子 &gt; 对子 &gt; 散牌，具体细节可在牌型页查看。<br>
+            · 是否需要下载软件？——网站直接访问即可，无需额外下载。<br>
+            · 内容更新频率？——站点为长期维护，规则与牌型部分保持稳定，偶尔补充说明。
+        </div>
+
+        <!-- 可信说明 / 站点介绍 -->
+        <div class="footnote" style="border-left: 4px solid #b8cadb;">
+            <strong>关于本站</strong><br>
+            这是一个面向中文用户的炸金花资料站，内容围绕经典玩法整理，不涉及任何形式的现金游戏或虚拟货币交易。
+            所有规则说明均参考常见线下玩法，部分细节可能因地区习惯略有差异，请以实际对局共识为准。
+            如果你对某些规则有不同理解，欢迎参考多个来源交叉确认。
+        </div>
+
+    </div>
+</body>
+</html>
